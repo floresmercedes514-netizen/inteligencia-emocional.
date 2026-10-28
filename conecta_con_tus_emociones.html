@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conectá con tus emociones 💗</title>
+<style>
+:root{--ink:#172c59;--lav:#eee5ff;--pink:#ffe3ec;--blue:#dff5ff;--mint:#def8e8;--yellow:#fff2b9;--paper:#fffdfb}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff9fc,#f7f7ff);color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;line-height:1.55}
+header{padding:52px 20px 38px;text-align:center;background:radial-gradient(circle at 20% 20%,#ffe2ed,transparent 32%),radial-gradient(circle at 85% 15%,#dff6ff,transparent 30%)}
+h1{font-size:clamp(2.2rem,7vw,4.4rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.04em}header p{font-size:1.15rem;margin:auto;max-width:680px}
+.tag{display:inline-block;background:#e9ddff;border-radius:999px;padding:7px 14px;font-weight:800;margin-bottom:18px}
+main{width:min(1100px,92%);margin:28px auto 60px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
+.card{background:white;border:1px solid #e8e5f1;border-radius:24px;padding:22px;box-shadow:0 8px 25px #25345a0b;margin-bottom:18px}
+.lav{background:var(--lav)}.pink{background:var(--pink)}.blue{background:var(--blue)}.mint{background:var(--mint)}.yellow{background:var(--yellow)}
+h2{font-size:1.6rem;margin:0 0 10px}h3{margin:0 0 8px;font-size:1.15rem}.eyebrow{font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;opacity:.7}
+.question{border-top:1px solid #d9dce8;padding:17px 0}.question:first-of-type{border-top:0}.question p{font-weight:800;margin:0 0 12px}
+.option{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;border:1px solid #dfe3ef;border-radius:13px;background:#fff;margin:8px 0;cursor:pointer;transition:.15s}
+.option:hover{transform:translateY(-1px);border-color:#9a8be7}.option input{margin-top:5px;accent-color:#6b58c9}.feedback{font-weight:700;margin-top:9px}
+button{border:0;border-radius:999px;background:var(--ink);color:white;padding:12px 18px;font:inherit;font-weight:800;cursor:pointer}button:hover{opacity:.88}.secondary{background:#e9e2ff;color:var(--ink)}.result{margin-top:15px;padding:14px;border-radius:14px;background:#f0eaff;display:none}
+.steps{display:grid;gap:12px}.step{display:flex;gap:14px;align-items:center;border-radius:17px;padding:14px}.light{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:white;font-weight:900;font-size:1.2rem}.red{background:#ffe1e1}.red .light{background:#e34f5f}.amber{background:#fff0bf}.amber .light{background:#e8a900}.green{background:#dcf8e8}.green .light{background:#239b68}
+textarea,input[type=text]{width:100%;border:1px solid #d8dced;border-radius:13px;padding:12px;font:inherit;color:var(--ink);background:white}textarea{min-height:82px;resize:vertical}.reflection{display:grid;gap:14px}.note{font-size:.92rem;opacity:.8}
+footer{text-align:center;padding:26px;color:#59698c}
+@media(min-width:760px){.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.two-col .card{margin-bottom:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="tag">💗 Una pausa para conocerte</div>
+  <h1>Conectá con tus<br>emociones</h1>
+  <p>La inteligencia emocional empieza cuando podemos reconocer lo que sentimos y elegir cómo responder.</p>
+</header>
+<main>
+  <section class="grid">
+    <article class="card lav"><div class="eyebrow">01 · Entender</div><h2>¿Qué es la inteligencia emocional?</h2><p>Es la capacidad de reconocer y comprender nuestras emociones, aprender a manejarlas y respetar lo que sienten los demás.</p></article>
+    <article class="card blue"><div class="eyebrow">02 · ¿Para qué sirve?</div><h2>Nos ayuda a…</h2><ul><li>Resolver conflictos con respeto.</li><li>Tomar decisiones más conscientes.</li><li>Expresar lo que necesitamos.</li><li>Construir relaciones más sanas.</li></ul></article>
+    <article class="card yellow"><div class="eyebrow">Recordatorio ✨</div><h2>Todas las emociones tienen un lugar</h2><p>Sentir enojo, miedo o tristeza no te hace una mala persona. Lo importante es reconocer la emoción y elegir una forma segura y respetuosa de actuar.</p></article>
+  </section>
+
+  <section class="card">
+    <div class="eyebrow">03 · Juego interactivo</div><h2>¿Qué harías vos? 🎮</h2><p>Elegí la respuesta que te parezca más saludable en cada situación y después revisá tus resultados.</p>
+    <form id="quiz">
+      <div class="question" data-answer="1" data-why="Reconocer el enojo y explicarlo con respeto ayuda a resolver el conflicto.">
+        <p>1. Un compañero hace un comentario que te molesta delante de todos. ¿Qué hacés?</p>
+        <label class="option"><input type="radio" name="q0" value="0"> Le grito para que no vuelva a hacerlo.</label>
+        <label class="option"><input type="radio" name="q0" value="1"> Respiro y le explico que me molestó.</label>
+        <label class="option"><input type="radio" name="q0" value="2"> Me desquito con otra persona.</label><div class="feedback"></div>
+      </div>
+      <div class="question" data-answer="1" data-why="La frustración puede ayudarte a descubrir qué necesitás practicar o cambiar.">
+        <p>2. Te sacás una mala nota y sentís frustración. ¿Qué hacés?</p>
+        <label class="option"><input type="radio" name="q1" value="0"> Pienso que no sirvo para estudiar.</label>
+        <label class="option"><input type="radio" name="q1" value="1"> Identifico qué pasó y busco cómo mejorar.</label>
+        <label class="option"><input type="radio" name="q1" value="2"> Culpo al profesor sin revisar nada.</label><div class="feedback"></div>
+      </div>
+      <div class="question" data-answer="1" data-why="La empatía es intentar comprender al otro y respetar cómo se siente.">
+        <p>3. Ves que un amigo está triste y no quiere hablar. ¿Qué hacés?</p>
+        <label class="option"><input type="radio" name="q2" value="0"> Le digo que deje de exagerar.</label>
+        <label class="option"><input type="radio" name="q2" value="1"> Respeto su espacio y pregunto si necesita compañía.</label>
+        <label class="option"><input type="radio" name="q2" value="2"> Les cuento a todos lo que le pasa.</label><div class="feedback"></div>
+      </div>
+      <div class="question" data-answer="0" data-why="Reconocer los nervios y respirar despacio puede ayudar a afrontar la situación.">
+        <p>4. Estás nervioso antes de una exposición. ¿Qué podría ayudarte?</p>
+        <label class="option"><input type="radio" name="q3" value="0"> Reconocer los nervios, respirar y prepararme.</label>
+        <label class="option"><input type="radio" name="q3" value="1"> Convencerme de que todo saldrá mal.</label>
+        <label class="option"><input type="radio" name="q3" value="2"> Descargar mi nerviosismo con mis compañeros.</label><div class="feedback"></div>
+      </div>
+      <div class="question" data-answer="1" data-why="Escuchar y explicar lo que sentimos permite entender distintos puntos de vista.">
+        <p>5. Discutís con alguien importante para vos. ¿Qué es lo más saludable?</p>
+        <label class="option"><input type="radio" name="q4" value="0"> Ganar la discusión a cualquier costo.</label>
+        <label class="option"><input type="radio" name="q4" value="1"> Escuchar, explicar cómo me siento y buscar una solución.</label>
+        <label class="option"><input type="radio" name="q4" value="2"> No hablar nunca más del tema.</label><div class="feedback"></div>
+      </div>
+      <button type="submit">Ver mis resultados ✨</button>
+      <button type="button" class="secondary" id="reset">Volver a jugar</button>
+      <div class="result" id="result" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <section class="two-col">
+    <article class="card pink">
+      <div class="eyebrow">04 · Empatía</div><h2>Ponete en mi lugar 💬</h2>
+      <h3>Situación: sentirse excluido</h3>
+      <p>Un grupo de compañeros sale a merendar y no te invita.</p>
+      <p><strong>Conversen:</strong> ¿qué emociones podrías sentir? ¿Cómo expresarías lo que te pasa? ¿Qué podría hacer un compañero para acompañarte?</p>
+      <p class="note">No hace falta contar experiencias personales: también pueden imaginar qué sentiría alguien en esa situación.</p>
+    </article>
+    <article class="card mint">
+      <div class="eyebrow">05 · Regular emociones</div><h2>El semáforo emocional 🚦</h2>
+      <div class="steps">
+        <div class="step red"><div class="light">1</div><div><h3>ROJO · Me detengo</h3><p>Reconozco qué estoy sintiendo antes de reaccionar.</p></div></div>
+        <div class="step amber"><div class="light">2</div><div><h3>AMARILLO · Pienso</h3><p>Me pregunto qué pasó y qué opciones tengo.</p></div></div>
+        <div class="step green"><div class="light">3</div><div><h3>VERDE · Actúo</h3><p>Elijo una respuesta respetuosa y segura.</p></div></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="card">
+    <div class="eyebrow">06 · Reflexión final</div><h2>Completá las frases ✍️</h2>
+    <p>Escribí tus ideas. Tus respuestas quedan en esta página mientras no la cierres o actualices.</p>
+    <div class="reflection">
+      <label>Cuando siento mucho enojo, puedo…<textarea id="r1" placeholder="Por ejemplo: hacer una pausa antes de contestar…"></textarea></label>
+      <label>Una forma saludable de manejar mis emociones es…<textarea id="r2" placeholder="Escribí tu idea…"></textarea></label>
+      <label>Para comprender mejor a los demás, puedo…<textarea id="r3" placeholder="Escribí tu idea…"></textarea></label>
+    </div>
+    <p style="margin-top:16px"><button type="button" id="copy">Copiar mis reflexiones</button> <span id="copyMsg" class="note" aria-live="polite"></span></p>
+  </section>
+  <section class="card lav" style="text-align:center"><h2>💜 Para llevarte</h2><p>La inteligencia emocional no significa estar siempre feliz. Significa reconocer lo que sentimos, aprender a manejarlo y comprender a los demás.</p><strong>Pequeños cambios, grandes aprendizajes.</strong></section>
+</main>
+<footer>Actividad educativa · Inteligencia emocional 💗</footer>
+<script>
+const quiz=document.getElementById('quiz'), result=document.getElementById('result');
+quiz.addEventListener('submit',e=>{
+ e.preventDefault(); const qs=[...document.querySelectorAll('.question')]; let score=0,answered=0;
+ qs.forEach(q=>{const chosen=q.querySelector('input:checked'),fb=q.querySelector('.feedback');fb.textContent='';if(!chosen){fb.textContent='Elegí una opción para esta situación.';fb.style.color='#8b5e00';return;}answered++;const correct=Number(chosen.value)===Number(q.dataset.answer);if(correct)score++;fb.textContent=(correct?'¡Bien pensado! ':'Una opción más saludable: ')+q.dataset.why;fb.style.color=correct?'#19734a':'#6d4d85';});
+ result.style.display='block';result.textContent=answered<qs.length?`Respondiste ${answered} de ${qs.length}. Tu resultado parcial es ${score}/${answered}. Podés completar las que faltan.`:`¡Terminaste! Tu resultado es ${score} de ${qs.length}. ${score===5?'¡Excelente!':score>=3?'¡Buen trabajo! Lo importante es reflexionar y aprender.':'¡Gracias por participar! Revisá las explicaciones y volvé a intentarlo si querés.'}`;
+});
+document.getElementById('reset').addEventListener('click',()=>{quiz.reset();document.querySelectorAll('.feedback').forEach(x=>x.textContent='');result.style.display='none';});
+document.getElementById('copy').addEventListener('click',async()=>{const t=`Mi reflexión sobre la inteligencia emocional\n\nCuando siento mucho enojo, puedo…\n${document.getElementById('r1').value}\n\nUna forma saludable de manejar mis emociones es…\n${document.getElementById('r2').value}\n\nPara comprender mejor a los demás, puedo…\n${document.getElementById('r3').value}`;try{await navigator.clipboard.writeText(t);document.getElementById('copyMsg').textContent='¡Copiado!';}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();document.getElementById('copyMsg').textContent='¡Copiado!';}});
+</script>
+</body>
+</html>
